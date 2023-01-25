@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización|kato</title>
+    <link rel="shortcut icon" href="./images/favicon.png"  type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/cotizacion.css">
+</head>
+</head>
+<body>
+    <header class="contacto">
+        <nav class="nav container">
+            <div class="nav_logo">
+                <h2 class="nav_title">Cotización.</h2>
+            </div>
+            <ul class="nav_link nav_link--menu">
+                <li class="nav_items">
+                    <a href="/index.html" class="nav_links">Inicio</a>
+                </li>
+                <li class="nav_items">
+                    <a href="/cotizacion.html" class="nav_links">Cotización</a>
+                </li>
+                <li class="nav_items">
+                    <a href="/productos.html" class="nav_links">Productos</a>
+                </li>
+                <li class="nav_items">
+                    <a href="/acercade.html" class="nav_links">Acerca de...</a>
+                </li>
+                <li class="nav_items">
+                    <a href="/contacto.html" class="nav_links">Contacto</a>
+                </li>
+                <img src="./images/bx-x-circle.svg" class="nav_close">
+            </ul>
+            <div class="nav_menu">
+                <img src="./images/bx-menu.svg" class="nav_img">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <form class="datos container" id="form">
+            <section class=" archivo ">
+                <div class="drop-area">
+                    <h3 class="drop-area_letter">Arrastrar y soltar el archivo</h3>
+                    <h3 class="drop-area_letter1">O</h3>
+                    <button>Seleccionar archivos</button>
+                    <input type="file" name="file" id="input_file" hidden multiple/>
+                </div>
+                <div id="preview"></div>
+            </section>
+            <section class="enviar">
+                <div class="mb-3">
+                    <label  class="form-label">Nombre:</label>
+                    <input type="text" class="nombre" id="nombre" placeholder="Nombre" name="name">
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Apellidos:</label>
+                    <input type="text" class="nombre" id="apellido" placeholder="Apellidos" name="last">
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Email:</label>
+                    <input type="email" class="correo" id="correo" placeholder="correo electronico" name="email">
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Especificaciones:</label>
+                    <textarea type="text" class="mensaje" id="mensaje" placeholder="Especificaciones" name="message"></textarea>
+                </div>
+                <input type="submit" id="button" value="Enviar" class="btn">
+            </section>
+        </form>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript"> emailjs.init('kWxdZ0-enAYL5qCqg')</script>
+    </main>
+    <footer class="footer">
+        <section class="footer_container container">
+            <nav class="nav nav--footer">
+                <h2 class="footer_title">Kato D&M</h2>
+                <ul class="nav_link nav_link--menu">
+                    <li class="nav_items">
+                        <a href="/kato.html" class="nav_links">Inicio</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="/cotizacion.html" class="nav_links">Cotización</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="/productos.html" class="nav_links">Productos</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="/acercade.html" class="nav_links">Acerca de...</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="/contacto.html" class="nav_links">Contacto</a>
+                    </li>
+                    <img src="./images/bx-x-circle.svg" class="nav_close">
+                </ul>
+            </nav>
+            
+        </section>
+        <section class="footer_copy container">
+            <div class="footer_social">
+                <a href="https://www.facebook.com/profile.php?id=100069774938731&mibextid=LQQJ4d" class="footer_icons"> <img src="./images/facebook.svg" class="footer_img" ></a>
+                <a href="https://www.instagram.com/kato_dym/?igshid=YmMyMTA2M2Y%3D" class="footer_icons"> <img src="./images/bxl-instagram.svg" class="footer_img"></a>
+            </div>
+        </section>
+    </footer>
+    <script src="./js/slider.js"></script>
+    <script src="./js/questions.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/Selector.js"></script>
+</body>
+<script>
+    const btn = document.getElementById('button');
+    document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        btn.value = 'Enviando...';
+        const serviceID = 'default_service';
+        const templateID = 'template_yoeh36f';
+        emailjs.sendForm(serviceID, templateID, this).then(() => {
+            btn.value = 'Enviar';
+            alert('Sent!');
+        }, (err) => {
+            btn.value = 'Enviar';
+            alert(JSON.stringify(err));
+        });
+    });
+</script>
+</html>

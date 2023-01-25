@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.archivos{
+    display: grid;
+    height: auto;
+    width: auto;
+}
+
+.archivo{
+    display: grid;
+    margin: auto;
+    margin-top: 90px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(50px,auto));
+}
+
+.drop-area{
+    border: 3px dashed #ddd;
+    height: 150px;
+    width: 350px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.drop-area.active{
+    background-color: #b8d4fe;
+    color: black;
+    border: 2px dashed #618ac9;
+}
+.drop-area_letter{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.drop-area_letter1{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.drop-area button{
+    padding: 5px 15px;
+    font-size: 20px;
+    outline: none;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px rgb(159, 159, 159);
+    border-radius: 7px; 
+    cursor: pointer;
+}
+
+.file-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: solid 1px #ddd;
+}
+
+#preview {
+    margin-top: 10px;
+}
+
+.status-text{
+    padding: 0  10px;
+}
+
+.success {
+    color: rgb(162, 151, 0);
+}
+
+.failure{
+    color: rgb(205, 192, 0);
+}
+
+.enviar{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 25px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.mb-3{
+    display: grid;
+    justify-items: auto ;
+    margin-bottom: 15px;
+}
+
+.form-label{
+    margin-bottom: 5px;
+}
+.mensaje{
+    width: 300px;
+    height: 300;
+
+}
