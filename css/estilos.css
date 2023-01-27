@@ -339,6 +339,7 @@ body{
     width: 30px;
 }
 
+
 /*contacto*/
 
 .contacto{
@@ -435,9 +436,10 @@ body{
     clip-path:  polygon(0 0, 100% 0, 100% 79%, 62% 97%, 38% 97%, 0 79%);
     z-index: -1;
 }
+/*productos*/
 
 .material{
-    text-align: center;
+    text-align: center; 
 }
 
 .material_about{
@@ -451,19 +453,21 @@ body{
 }
 
 .material_ar{
-    /*display: grid;
+    display: grid;
     gap: 1em;
     justify-items: center;
     width: 260px;
     overflow: hidden;
     margin: 0 auto;
-    margin-bottom: 100px;*/
+    margin-bottom: 100px;
     padding: 0;
     transition: padding .3s;
 }
+
 .material_ar--add{
     padding-bottom: 30px;
 }
+
 .material_img{
     width: 50px;
     cursor: pointer;
@@ -472,6 +476,7 @@ body{
 .MCarrito{
     height: 0;
     transform: height .3s;
+    
 }
 
 .btnm{
@@ -481,14 +486,95 @@ body{
     border: solid 2px rgb(163, 163, 163);
     background-color: rgb(228, 228, 228);
     cursor: pointer;
+    transform: height .3s;
 }
 
 .cuanto{
-    width: 70px;
+    width: 150px;
     height: auto;
     margin-right: 10px;
+    margin-bottom: 10px;
+    transform: height .3s;
+
 }
 
+/*seleccionar*/
+.TSelector{
+    width: 100%;
+    margin: auto;
+    position: relative;  
+}
+
+.TSeleccionado{
+   background-color: #cccccc;
+   width: 100%;
+   box-shadow: 0px 0px 0px rgba(0,0,0,.16);
+   border-radius: 3px;
+   cursor: pointer;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: .2s ease all;
+   margin-bottom: 13px;
+   padding: 3px;
+   position: relative;
+   z-index: 2;
+   border: 2px solid transparent;
+}
+.TSeleccionado.active,
+.TSeleccionado:hover{
+    box-shadow: 0px 5px 10px rgba(0,0,0,.16);
+    border: 2px solid rgb(92, 92, 92);
+}
+.TSeleccionado.active:before{
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    border-top: 9px solid rgb(92, 92, 92);
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 9px solid transparent;
+    position: absolute;
+    bottom: -19px;
+    left: calc(50% - 15px);
+}
+
+.tamaños{
+    font-size: 0.8rem;
+    color: black;
+}
+
+.opciones{
+    background:#cccccc;
+    border-radius: 3px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,16);
+    max-height: 40px;
+    overflow: auto;
+    z-index: 3;
+    width: 100%;
+    display: none;
+}
+
+.opciones.active {
+    display: block;
+}
+.opcion{
+    text-decoration: none;
+}
+.contenido_opcion{
+    width: 100%;
+    display: grid;
+    text-align: center;
+    border-bottom: 2px;
+    transition: .2s ease all;
+}
+.opciones .contenido_opcion{
+    padding: 7px;
+}
+.opciones .contenido_opcion:hover{
+    background-color: #a6a6a6;
+}
 
 /*dispositivo movil*/
 
@@ -499,7 +585,7 @@ body{
     
     .nav_link--menu{
         position: fixed;
-        background-color: #000;
+        background: linear-gradient(135deg,rgb(182, 178, 68) 15%, rgb(8, 181, 255) 100%);
         top: 0;
         left: 0;
         height: 100%;
